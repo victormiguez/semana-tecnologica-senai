@@ -25,5 +25,15 @@ Template.admin.events({
     Meteor.setTimeout(function () {
       Iniciado.update(Iniciado.findOne({})._id, {$set: {jogoIniciou: false}});
     }, 4000)
+  },
+  'submit #login': function (event) {
+    event.preventDefault();
+
+    var senha = event.target.senha.value;
+
+    if (senha == 'senai')
+      return Session.set('admin', true)
+
+    console.error('Errrooouu');
   }
 });

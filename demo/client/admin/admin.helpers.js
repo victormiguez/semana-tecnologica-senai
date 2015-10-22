@@ -28,5 +28,8 @@ Template.admin.helpers({
   },
   apressado: function () {
     return Pontos.findOne({}).userName;
-  }
+  },
+  admin: function () {
+    return Session.get('admin');
+  },
 });
